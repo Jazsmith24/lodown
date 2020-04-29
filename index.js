@@ -6,7 +6,7 @@
  * 
  * @param {Value} value: Input value can be any data type
  * 
- * @return {Value}: Return value unchanged.
+ * @return {Value} any datatype: Return value unchanged.
  * 
  */ 
 function identity(value){
@@ -21,7 +21,7 @@ module.exports.identity = identity;
 /**
  * typeOf: Takes an input value and returns it's datatype as a string.
  * 
- * @param {Value} value : Input value can be any data type. The datatype of the input value will be checked using conditional statements
+ * @param {Value} any datatype : Input value can be any data type. The datatype of the input value will be checked using conditional statements
  * 
  * @return {String} string: Returns the type of value as a string
  * 
@@ -55,7 +55,7 @@ module.exports.typeOf = typeOf;
 /**
  * first: Designed to test an array and a number to return output.
  * 
- * @param {Array} collection : value to test if collection is an array
+ * @param {Array} array : value to test if collection is an array
  * @param {Number} number : value to test if number is not given or is a number
  * 
  * @return {Array} : returns an empty array if <array> is not an array
@@ -83,7 +83,7 @@ module.exports.first = first;
 /**
  * last: Designed to test an array and a number to return output.
  * 
- * @param {Array} collection : value to test if collection is an array
+ * @param {Array} array : value to test if collection is an array
  * @param {Number} number : value to test if number is not given or is a number
  * 
  * @return {Array} : returns an empty array if <array> is not an array
@@ -145,15 +145,15 @@ module.exports.indexOf = indexOf;
 function contains(array, value){
     return array.includes(value) ? true : false;
 }
-module.export.contains = contains;
+module.exports.contains = contains;
 
 
 /**
  * each: Designed to loop over a collection, Array or Object, and applies the 
  * action Function to each value in the collection.
  * 
- * @param {Array or Object} collection: The collection over which to iterate.
- * @param {Function} action: The Function to be applied to each value in the 
+ * @param {Collection} array or object: The collection over which to iterate.
+ * @param {Action} function: The Function to be applied to each value in the 
  * collection
  */
 function each(collection, action) {
@@ -197,7 +197,7 @@ module.exports.unique = unique;
  * and returns the values that the function call returned true into a new array.
  * 
  * @param {Array} array : Collection to iterate through.
- * @param {Funct} function : action function to apply to each element in the array.
+ * @param {Funct} function : action function to apply to each element, index, array
  * 
  * @return {newArray} array : returns a new array of all values for which the <function> returned true.
  * 
@@ -221,7 +221,7 @@ module.exports.filter = filter;
  * and returns the values that the function call returned false into a new array.
  * 
  * @param {Array} array : Collection to iterate through.
- * @param {Funct} function : action function to apply to each element in the array.
+ * @param {Funct} function : action function to apply to each element, index, array.
  * 
  * @return {newArray} array : returns a new array of all values for which the <function> returned false.
  * 
@@ -246,7 +246,7 @@ module.exports.reject = reject;
  * The new array containing both arrays is then returned.
  * 
  * @param {Array} array : array to iterate and apply <function> to elements
- * @param {aFunction} :the function to be applied to the elements in the array in order to seperate truthy and falsy values.
+ * @param {aFunction} function :the function to be applied to the elements in the array in order to seperate truthy and falsy values.
  * 
  * 
  * @return {array} : returns a nested array containing one array with falsy values and another with truthy values.
@@ -298,7 +298,7 @@ module.exports.map = map;
  * @param {objArr} array : the array of objects to iterate through
  * @param {property} string : key values of an object with in the array
  * 
- * reutrn {array} : an array containing the value of function call on <property> of every element in array of objects
+ * reutrn {array} : an array containing the value of <property> for every element in array of objects.
  * 
 */ 
 
@@ -317,8 +317,8 @@ module.exports.pluck = pluck;
  * @param {Collection} Array or Object : Collection to iterate
  * @param {Funct} function : function to apply to each value in the collection
  * 
- * @return {boolean}: returs true if the value of the function call for all elements are true, false if just one is false.
- * 
+ * @return {boolean}: returns true if the value of the function call for all elements are true, false if just one is false.
+ * If <function> is not provided, return true if every element is truthy, otherwise return false.
 */ 
 
 function every(collection, funct){
@@ -344,14 +344,14 @@ function every(collection, funct){
 module.exports.every = every;
 
 /**
- * SOme: Designed to iterate over a collection and applies <func> to the every element in the collection.
+ * Some: Designed to iterate over a collection and applies <func> to the every element in the collection.
  * Checks if the value of the function call on at least one element is true.
  * 
  * @param {Collection} Array or Object : Collection to iterate
  * @param {Funct} function : function to apply to each value in the collection
  * 
  * @return {boolean}: returs true if the value of the function call for at least one element is true, false if just one is false.
- * 
+ * If <function> is not provided return true if at least one element is truthy, otherwise return false.
 */ 
  
  function some(collection, funct){
@@ -382,8 +382,7 @@ module.exports.some = some;
  * @param {list} array : The collection to iterate through
  * @param {func} function : <function> applied to each value in the 
  * collection to check if value is true.
- * @param {seed} any datatype : The seed, depending on what datatype you would like to 
- * output, can be any datatype. This is the parameter that values will accumulate into.
+ * @param {seed} any datatype : This is the parameter that values will accumulate into.
  * 
  * @return {any datatype}: returns accumulated result from the value of the last function call.
  * 
