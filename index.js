@@ -4,9 +4,9 @@
 /**
  * identity: return a given value unchanged
  * 
- * @param {Value} value: Input value can be any data type
+ * @param {Any datatype} value: Input value can be any data type
  * 
- * @return {Value} any datatype: Return value unchanged.
+ * @return {any datatype} value: Return value unchanged.
  * 
  */ 
 function identity(value){
@@ -21,9 +21,9 @@ module.exports.identity = identity;
 /**
  * typeOf: Takes an input value and returns it's datatype as a string.
  * 
- * @param {Value} any datatype : Input value can be any data type. The datatype of the input value will be checked using conditional statements
+ * @param {any datatype} value : Input value can be any data type. The datatype of the input value will be checked using conditional statements
  * 
- * @return {String} string: Returns the type of value as a string
+ * @return {String} : Returns the type of value as a string
  * 
  */ 
  
@@ -115,9 +115,9 @@ module.exports.last = last;
  * the value's index of it's first occurence.
  * 
  * @param {Array} array : array to iterate through
- * @param {Value} any dataype :  The values to check if it's first occurence of that value in the <array> input.
+ * @param {any datatype} value :  The values to check if it's first occurence of that value in the <array> input.
  * 
- * @return {i} number : returns the index number of <value> if found.
+ * @return {number} i : returns the index number of <value> if found.
  * @return {number} : returns -1 if value is not an occurence in the array.
  * 
  */ 
@@ -136,7 +136,7 @@ module.exports.indexOf = indexOf;
  * contains: Designed to loop over an array to check if <array> contains a <value> 
  * 
  * @param {Array} array : array to iterate through
- * @param {Value} any datatype : value to test if it is included in the array.
+ * @param {Any datatype} value : value to test if it is included in the array.
  * 
  * @return {boolean}: returns true if <array> contains <value>, false otherwise
  * 
@@ -152,8 +152,8 @@ module.exports.contains = contains;
  * each: Designed to loop over a collection, Array or Object, and applies the 
  * action Function to each value in the collection.
  * 
- * @param {Collection} array or object: The collection over which to iterate.
- * @param {Action} function: The Function to be applied to each value in the 
+ * @param {Array or Object} collection : The collection over which to iterate.
+ * @param {Function} action: The Function to be applied to each value in the 
  * collection
  */
 function each(collection, action) {
@@ -197,9 +197,9 @@ module.exports.unique = unique;
  * and returns the values that the function call returned true into a new array.
  * 
  * @param {Array} array : Collection to iterate through.
- * @param {Funct} function : action function to apply to each element, index, array
+ * @param {function} funct : action function to apply to each element, index, array
  * 
- * @return {newArray} array : returns a new array of all values for which the <function> returned true.
+ * @return {array} newArray : returns a new array of all values for which the <function> returned true.
  * 
  */ 
  
@@ -221,9 +221,9 @@ module.exports.filter = filter;
  * and returns the values that the function call returned false into a new array.
  * 
  * @param {Array} array : Collection to iterate through.
- * @param {Funct} function : action function to apply to each element, index, array.
+ * @param {Function} funct : action function to apply to each element, index, array.
  * 
- * @return {newArray} array : returns a new array of all values for which the <function> returned false.
+ * @return {array} newArray : returns a new array of all values for which the <function> returned false.
  * 
  */  
 
@@ -246,10 +246,10 @@ module.exports.reject = reject;
  * The new array containing both arrays is then returned.
  * 
  * @param {Array} array : array to iterate and apply <function> to elements
- * @param {aFunction} function :the function to be applied to the elements in the array in order to seperate truthy and falsy values.
+ * @param {Function} aFunction :the function to be applied to the elements in the array in order to seperate truthy and falsy values.
  * 
  * 
- * @return {array} : returns a nested array containing one array with falsy values and another with truthy values.
+ * @return {array} newArray : returns a nested array containing one array with falsy values and another with truthy values.
  * 
  */
  
@@ -272,10 +272,10 @@ module.exports.reject = reject;
   * map: Designed to iterate over a collection and push values for which calling <function> returned true
   * into a new array and the new array is returned.
   * 
-  * @param {collection} array or object : collection to iterate through
-  * @param {func} function : Action function to be applied to each element or property in the collection 
+  * @param {Array or Object} collection : collection to iterate through
+  * @param {Function} func : Action function to be applied to each element or property in the collection 
   * 
-  * @return {array} : returns a neew array for which calling action function return true
+  * @return {array} newArray: returns a neew array for which calling action function return true
   * 
  */ 
  
@@ -295,8 +295,8 @@ module.exports.map = map;
  * pluck: Designed to loop over an array of objects and applies the map function to retrieve the 
  * value of calling the function on a given property.
  * 
- * @param {objArr} array : the array of objects to iterate through
- * @param {property} string : key values of an object with in the array
+ * @param {Array} objArr : the array of objects to iterate through
+ * @param {String} property : key values of an object with in the array
  * 
  * reutrn {array} : an array containing the value of <property> for every element in array of objects.
  * 
@@ -314,8 +314,8 @@ module.exports.pluck = pluck;
  * every: Designed to iterate over a collection and applies <func> to the every element in the collection.
  * Checks if the value of the function call on all elements are true.
  * 
- * @param {Collection} Array or Object : Collection to iterate
- * @param {Funct} function : function to apply to each value in the collection
+ * @param {Array or Object} Collection : Collection to iterate
+ * @param {Function} funct : function to apply to each value in the collection
  * 
  * @return {boolean}: returns true if the value of the function call for all elements are true, false if just one is false.
  * If <function> is not provided, return true if every element is truthy, otherwise return false.
@@ -347,8 +347,8 @@ module.exports.every = every;
  * Some: Designed to iterate over a collection and applies <func> to the every element in the collection.
  * Checks if the value of the function call on at least one element is true.
  * 
- * @param {Collection} Array or Object : Collection to iterate
- * @param {Funct} function : function to apply to each value in the collection
+ * @param {Array or Object} collection : Collection to iterate
+ * @param {Function} funct : function to apply to each value in the collection
  * 
  * @return {boolean}: returs true if the value of the function call for at least one element is true, false if just one is false.
  * If <function> is not provided return true if at least one element is truthy, otherwise return false.
@@ -379,10 +379,10 @@ module.exports.some = some;
 /**
  *  reduce: Designed to reduce an array of values to a single value.
  * 
- * @param {list} array : The collection to iterate through
- * @param {func} function : <function> applied to each value in the 
+ * @param {Array} list : The collection to iterate through
+ * @param {Function} func : <function> applied to each value in the 
  * collection to check if value is true.
- * @param {seed} any datatype : This is the parameter that values will accumulate into.
+ * @param {any datatype} seed : This is the parameter that values will accumulate into.
  * 
  * @return {any datatype}: returns accumulated result from the value of the last function call.
  * 
@@ -410,7 +410,7 @@ module.exports.reduce = reduce;
  * extend:Designed take multiple object inputs applies the Object.assign method to each collection to add the collections together, 
  * creating shallow copies of input objects properties/values into the first given object.
  * 
- * @param {...args} object: a list of objects to combine together copied into the first object
+ * @param {object} ...args : a list of objects to combine together copied into the first object
  * 
  * @return {object}: returns object in which all input objects are combined.
  * 
